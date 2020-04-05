@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from './header';
 
 function Layout({ children }) {
   return(
@@ -10,7 +11,21 @@ function Layout({ children }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/style.css" />
       </Head>
-      {children}
+      <center>
+        <table
+          id="hnmain"
+          border="0"
+          cellPadding="0"
+          cellSpacing="0"
+          width="85%"
+          style={{ backgroundColor: '#f6f6ef' }}
+        >
+          <tbody>
+            <Header />
+            {children}
+          </tbody>
+        </table>
+      </center>
     </>
   )
 }

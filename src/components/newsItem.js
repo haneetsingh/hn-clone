@@ -1,64 +1,54 @@
 import { parse } from 'url';
 import formatTime from '../helpers/formatTime';
+import styles from './NewsItem.module.scss';
+import { useState } from 'react';
 
-function NewsItem({ item, rank }) {
+const NewsItem = ({ item }) => {
+  const [upvoted, setUpvoted] = useState(true);
+  const handleUpvote = () => {
+    setUpvoted(false);
+    const upvotedList = JSON.parse(localStorage.getItem('upvotedList')) || [];
+    const updatedItem = {
+      key: item.objectID,
+      points: upvoted ? item.points+1 : item.points-1,
+      upvoted: upvoted
+    };
+    localStorage.setItem('upvotedList', JSON.stringify([...upvotedList, updatedItem]));
+  }
+
   return (
-    <>
-      <tr className="athing">
-        <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
-          <span className="rank">{rank}</span>
-        </td>
-        <td style={{ verticalAlign: 'top' }} className="votelinks">
-          <div style={{ textAlign: 'center' }}>
-            <a
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="votearrow" title="upvote" />
+    <div className={styles.list}>
+      <div className={styles.num_comments}>
+        {item.num_comments}
+      </div>
+      <div className={styles.points}>
+        {item.points}
+        <span className={styles.vote_arrow} onClick={handleUpvote}></span>
+      </div>
+      <div className={styles.title}>
+        <a href={item.url && item.url}>
+          {item.title ? item.title : item.story_title}
+        </a>
+      </div>
+      { item.url &&
+        <div className={styles.hostname}>
+          (
+            <a style={{ cursor: 'pointer' }}>
+              {parse(item.url).hostname}
             </a>
-          </div>
-        </td>
-        <td className="title">
-          <a
-            className="storylink"
-            href={item.url}
-          >
-            {item.title}
-          </a>
-          { item.url &&
-            <span className="sitebit comhead">
-              {' '}
-              (
-                <a style={{ cursor: 'pointer' }}>
-                  <span className="sitestr">
-                    {parse(item.url).hostname}
-                  </span>
-                </a>
-              )
-            </span>
-          }
-        </td>
-      </tr>
-      <tr>
-        <td colSpan={2} />
-        <td className="subtext">
-          <span className="score">{item.points} points</span>
-          {' by '}
-          <a className="hnuser" style={{ cursor: 'pointer' }}>{item.author}</a>
-          {' '}
-          <span className="age">{formatTime(item.created_at)}</span>
-          {' | '}
-          <a>hide</a>
-          {' | '}
-          <a>
-            {item.num_comments === 0
-              ? 'discuss'
-              : item.num_comments === 1
-              ? '1 comment'
-              : `${item.num_comments} comments`}
-          </a>
-        </td>
-      </tr>
-    </>
+          )
+        </div>
+      }
+      <div className="authored-by">
+        <span className={styles.authored_by_text}>by</span>
+        {' '}
+        <span className="author-name">{item.author}</span>
+      </div>
+      <div className={styles.created_at}>{formatTime(item.created_at)}</div>
+      <div className={styles.hide}>
+        [ <a>hide</a> ]
+      </div>
+    </div>
   );
 }
 

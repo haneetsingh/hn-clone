@@ -1,0 +1,5 @@
+body  { font-family:Verdana, Geneva, sans-serif; font-size:14px; }
+a { color:#000000; text-decoration:none; }
+li.active a { color: #ffffff };
+.more-link { padding: 10px };
+.more-link a { color: #ff6600, cursor: pointer; };

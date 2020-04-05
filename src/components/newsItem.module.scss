@@ -1,0 +1,51 @@
+.list {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  .num_comments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+  }
+
+  .points {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+
+  .vote_arrow {
+    background: url('/static/grayarrow.gif');
+    border: 0;
+    height: 10px;
+    margin: 3px 2px 6px 6px;
+    width: 10px;
+  }
+
+  .hostname {
+    color: #828282;
+    font-size: 12px;
+    margin: 0 5px;
+
+    a {
+      color: #828282;
+    }
+  }
+
+  .authored_by_text {
+    color: #828282;
+    font-size: 12px;
+  }
+
+  .created_at {
+    color: #828282;
+    font-size: 12px;
+    margin: 0 5px;
+  }
+
+  .hide {
+    color: #828282;
+  }
+}

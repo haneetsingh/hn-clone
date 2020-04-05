@@ -12,7 +12,7 @@ function Header() {
               <Link href="/">
                 <a>
                   <img
-                    src="/y18.gif"
+                    src="./static/y18.gif"
                     style={{
                       border: '1px',
                       borderColor: 'white',
@@ -27,21 +27,21 @@ function Header() {
             <td style={{ lineHeight: '12px', height: '10px', padding: '0' }}>
               <span className="pagetop">
                 <b className="hnname">
-                  <a href="news">Hacker News</a>
+                  <a>Hacker News</a>
                 </b>
-                <a href="newest">new</a>
+                <a>new</a>
                 {' | '}
-                <a href="front">past</a>
+                <a>past</a>
                 {' | '}
-                <a href="newcomments">comments</a>
+                <a>comments</a>
                 {' | '}
-                <a href="ask">ask</a>
+                <a>ask</a>
                 {' | '}
-                <a href="show">show</a>
+                <a>show</a>
                 {' | '}
-                <a href="jobs">jobs</a>
+                <a>jobs</a>
                 {' | '}
-                <a href="submit">submit</a>
+                <a>submit</a>
               </span>
             </td>
             <td style={{ textAlign: 'right', paddingRight: '4px' }}>

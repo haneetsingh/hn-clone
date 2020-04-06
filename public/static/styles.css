@@ -1,5 +1,25 @@
-body  { font-family:Verdana, Geneva, sans-serif; font-size:14px; }
-a { color:#000000; text-decoration:none; }
-li.active a { color: #ffffff };
-.more-link { padding: 10px };
-.more-link a { color: #ff6600, cursor: pointer; };
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  font-family:Verdana, Geneva, sans-serif;
+  font-size:14px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+a {
+  color:#000000;
+  text-decoration:none;
+}
+
+li.active a {
+  color: #ffffff
+};

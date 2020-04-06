@@ -1,0 +1,29 @@
+.more_link {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.empty_spacer {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    width: 10%; 
+  }
+}
+
+.anchor { 
+  color: #ff6600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    justify-content: start;
+    margin-left: 7px;
+    width: auto;
+  }
+}

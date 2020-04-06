@@ -3,6 +3,7 @@ import Router from 'next/router'
 import fetch from 'node-fetch';
 import Layout from "../src/components/Layout";
 import NewsItem from '../src/components/NewsItem';
+import styles from './index.module.scss';
 
 const Newest = ({ posts }) => {
   const [page, setPage] = useState(0);
@@ -26,8 +27,9 @@ const Newest = ({ posts }) => {
           />
         ))}
       </div>
-      <div style={{ padding: '20px', marginInlineStart: '120px' }}>
-        <a style={{ color: '#ff6600', cursor: 'pointer' }} onClick={handleNext}>More</a>
+      <div className={styles.more_link}>
+        <div className={styles.empty_spacer}></div>
+        <a className={styles.anchor} onClick={handleNext}>More</a>
       </div>
     </Layout>
   );

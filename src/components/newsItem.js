@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { parse } from 'url';
 import formatTime from '../helpers/formatTime';
+import classNames from 'classnames';
 import styles from './NewsItem.module.scss';
 
 const NewsItem = ({ item }) => {
@@ -57,45 +58,51 @@ const NewsItem = ({ item }) => {
   return (
     !hidden &&
       <div className={styles.list}>
-        <div className={styles.num_comments}>
-          {item.num_comments}
-        </div>
-        <div className={styles.points}>
-          { points ? points : item.points }
-          { (upvoted || isVoted) ?
-              <span
-                className={styles.vote_arrow_hidden}
-                onClick={handleDownvote}
-              ></span>
-            :
-              <span
-                className={styles.vote_arrow}
-                onClick={handleUpvote}
-              ></span>
-          }
-        </div>
-        <div className={styles.title}>
-          <a href={item.url && item.url}>
-            {item.title ? item.title : item.story_title}
-          </a>
-        </div>
-        { item.url &&
-          <div className={styles.hostname}>
-            (
-              <a style={{ cursor: 'pointer' }}>
-                {parse(item.url).hostname}
-              </a>
-            )
+        <div className={classNames(styles.list_item, styles.list_item_left)}>
+          <div className={styles.num_comments}>
+            {item.num_comments}
           </div>
-        }
-        <div className="authored-by">
-          <span className={styles.authored_by_text}>by</span>
-          {' '}
-          <span className="author-name">{item.author}</span>
         </div>
-        <div className={styles.created_at}>{formatTime(item.created_at)}</div>
-        <div className={styles.hide}>
-          [ <a onClick={handleHideItem}>hide</a> ]
+        <div className={classNames(styles.list_item, styles.list_item_right)}>
+          <div className={styles.points}>
+            { points ? points : item.points }
+            { (upvoted || isVoted) ?
+                <span
+                  className={styles.vote_arrow_hidden}
+                  onClick={handleDownvote}
+                ></span>
+              :
+                <span
+                  className={styles.vote_arrow}
+                  onClick={handleUpvote}
+                ></span>
+            }
+          </div>
+          <div className={styles.title}>
+            <a href={item.url && item.url}>
+              {item.title ? item.title : item.story_title}
+            </a>
+            { item.url &&
+              <div className={styles.hostname}>
+                (
+                  <a style={{ cursor: 'pointer' }}>
+                    {parse(item.url).hostname}
+                  </a>
+                )
+              </div>
+            }
+          </div>
+          <div>
+            <span className={styles.authored_by_text}>by</span>
+            {' '}
+            <span className={styles.author_name}>{item.author}</span>
+          </div>
+          <div className={styles.created_at}>
+            {formatTime(item.created_at)}
+          </div>
+          <div className={styles.hide}>
+            [ <a onClick={handleHideItem}>hide</a> ]
+          </div>
         </div>
       </div>
   );

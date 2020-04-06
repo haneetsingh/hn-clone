@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <img src="./static/y18.gif" />
+        <img src="./y18.gif" alt="logo" />
       </div>
       <ul className={styles.links}>
         <li className={router.pathname == "/" ? "active" : ""}>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { parse } from 'url';
 import formatTime from '../helpers/formatTime';
 import classNames from 'classnames';
-import styles from './NewsItem.module.scss';
+import styles from './newsItem.module.scss';
 
 const NewsItem = ({ item }) => {
   const [upvoted, setUpvoted] = useState(false);

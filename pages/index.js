@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Router from 'next/router'
 import fetch from 'node-fetch';
-import Layout from '../src/components/Layout';
-import NewsItem from '../src/components/NewsItem';
+import Layout from '../src/components/layout';
+import NewsItem from '../src/components/newsItem';
 import styles from './index.module.scss';
 
 const Home = ({ posts }) => {

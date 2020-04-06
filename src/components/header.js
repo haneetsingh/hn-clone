@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from "next/router";
-import styles from './Header.module.scss'
+import styles from './header.module.scss'
 
 const Header = () => {
   const router = useRouter();

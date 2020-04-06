@@ -5,8 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT"
   },
+  "engines": {
+    "node": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haneetsingh/hn-clone.git"
+  },
+  "author": "Haneet Singh",
+  "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.6",
     "next": "9.3.4",

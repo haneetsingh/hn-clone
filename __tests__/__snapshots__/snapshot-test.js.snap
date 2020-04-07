@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div
+      className="logo"
+    >
+      <img
+        alt="logo"
+        src="./y18.gif"
+      />
+    </div>
+    <ul
+      className="links"
+    >
+      <li
+        className=""
+      >
+        <a
+          className="active"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          top
+        </a>
+      </li>
+       | 
+      <li
+        className=""
+      >
+        <a
+          className="active"
+          href="/newest"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          new
+        </a>
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="news-items"
+  />,
+  <div
+    className="more_link"
+  >
+    <div
+      className="empty_spacer"
+    />
+    <a
+      className="anchor"
+      onClick={[Function]}
+    >
+      More
+    </a>
+  </div>,
+]
+`;

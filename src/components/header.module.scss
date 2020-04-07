@@ -10,16 +10,20 @@
     width: 20px;
   }
   
-  .links {
+  .links_list {
     display: flex;
     align-items: center;
     list-style: none;
     margin: 0 0 0 15px;
     padding: 0;
   
-    li {
+    .links_list_item {
       margin: 0 5px;
       padding: 0 5px;
+    }
+
+    .links_list_link_active {
+      color: #ffffff;
     }
   }
 }

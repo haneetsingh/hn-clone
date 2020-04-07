@@ -20,7 +20,7 @@ const Home = ({ posts }) => {
   return (
     <Layout>
       <div className="news-items">
-        { posts.hits.map(post => (
+        { posts && posts.hits.map(post => (
           <NewsItem key={post.objectID} item={post} />
         ))}
       </div>
